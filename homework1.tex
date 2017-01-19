@@ -1,0 +1,56 @@
+\documentclass[12pt,fleqn]{exam}
+
+\usepackage{amssymb,amsfonts,amsmath}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{tabularx}
+
+\newcommand{\class}{MATH 513/463}
+\newcommand{\term}{Spring 2017}
+\newcommand{\doctitle}{Homework 1}
+
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+
+\parindent 0ex
+
+\pagestyle{head}
+\header{\bf \class}{\bf \doctitle\ - Page \thepage\ of \numpages}{\bf \term}
+\headrule
+
+\begin{document}
+
+\begin{questions}
+
+\question (Evans \S1.5, \#1) Classify each of the partial differential equations in \S1.2 as follows:
+
+\begin{parts}
+\part Is the PDE linear, semilinear, quasilinear or fully nonlinear?
+\part What is the order of the PDE?
+\end{parts}
+
+\question (Evans \S1.5, \#2) Prove the \emph{multinomial theorem}
+\[(x_1 + x_2 + \dots + x_n)^k = \sum_{|\alpha| = k} \binom{|\alpha|}{\alpha}\,x^\alpha\]
+where $\binom{|\alpha|}{\alpha} = \frac{|\alpha|!}{\alpha!}$, $\alpha! = \alpha_1!\alpha_2!\dots \alpha_n!$, and $x^\alpha = x_1^{\alpha_1} x_2^{\alpha_2} \dots x_n^{\alpha_n}$. The sum is taken over all multiindices $\alpha$ with order $|\alpha| = k$.
+
+\emph{Hint}: Use the binomial theorem along with induction on $n$.
+
+\question (Evans \S2.5, \#1) Write down an explicit formula for a function $u$ solving the initial-value problem
+
+\[\begin{cases}
+u_t + b \cdot Du + cu = 0 & \text{in } \R^n \times (0, \infty) \\
+u = g & \text{on } \mathbb{R}^n \times \{t = 0\}.
+\end{cases}\]
+Here $c \in \R$ and $b \in \R^n$ are constants. Describe how your solution differs from the solution of the initial value problem for the transport equation.
+
+\emph{Hint}: Calculate $\dot{z}$ with $z$ as defined in \S2.1. What ODE does $z$ solve? 
+
+\question (Evans \S2.5, \#2) Prove that Laplace's equation $\Delta u = 0$ is rotation invariant; that is, if $O$ is an orthogonal $n \times n$ matrix and we define
+\[v(x) = u(Ox) \quad\text{for } x \in \R,\]
+then $\Delta v = 0$.
+
+\emph{Hint}: Compute $\Delta v$ using the multivariable chain rule, taking advantage of the orthogonality of $O$.
+
+\end{questions}
+
+\end{document}
