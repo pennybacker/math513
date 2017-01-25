@@ -1,0 +1,74 @@
+\documentclass[12pt,fleqn]{exam}
+
+\usepackage{amssymb,amsfonts,amsmath}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{tabularx}
+
+\newcommand{\class}{MATH 513/463}
+\newcommand{\term}{Spring 2017}
+\newcommand{\doctitle}{Homework 2}
+
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\D}{\ensuremath{\mathrm{R}}}
+
+\def\Xint#1{\mathchoice
+	{\XXint\displaystyle\textstyle{#1}}%
+	{\XXint\textstyle\scriptstyle{#1}}%
+	{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+	{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+	\vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+
+
+\parindent 0ex
+
+\pagestyle{head}
+\header{\bf \class}{\bf \doctitle\ - Page \thepage\ of \numpages}{\bf \term}
+\headrule
+
+\begin{document}
+
+\begin{questions}
+
+\question In the following way, solve the problem for Poisson's equation on the ball $B(0,1) \subset \R^2$ given by
+\[\begin{cases}
+\Delta u = y & \text{in } B^0(0,1) \\
+u = 1 & \text{on } \partial B(0,1).
+\end{cases}\]
+Look for a solution in polar coordinates of the form
+\[u(r,\theta) = \frac12\,A_0(r) + \sum_{n = 1}^{\infty} \big( A_n(r)\cos(n\theta) + B_n(r)\sin(n\theta) \big),\]
+assuming that $u$ is bounded near the origin.
+
+\begin{parts}
+\part Write the function $y$ and the operator $\Delta$ in polar coordinates. Deduce the ODEs that $A_0$, $A_1$, $B_1$, \dots~satisfy along with the corresponding initial conditions.
+\part Solve these initial value problems and substitute the solutions into the ansatz for $u$. Write your answer as a function of $x$ and $y$.
+
+\emph{Hint}: You should obtain the ODE $r^2 B_1'' + r B_1' - B_1 = r^3$ when solving for $B_1$. This ODE has a particular solution of the form $B_1(r) = c\,r^3$. Use this fact to obtain the general solution to the ODE.
+\end{parts}
+
+\question (Evans \S2.5, \#3) Modify the proof of the mean value formulas to show for $n \geq 3$ that
+\[u(0) = \dashint_{\partial B(0,r)} g\,dS + \frac{1}{n(n-2)\alpha(n)} \int_{B(0,r)} \bigg(\frac{1}{|x|^{n-2}} - \frac{1}{r^{n-2}}\bigg)\,f\,dx ,\]
+provided
+\[\begin{cases}
+-\Delta u = f & \text{in } B^0(0,r) \\
+u = g & \text{on } \partial B(0,r) .
+\end{cases}\]
+
+\question (Evans \S2.5, \#4) We say $v \in C^2(\bar{U})$ is subharmonic if
+\[-\Delta v \leq 0 \quad\text{in } U.\]
+
+\begin{parts}
+\part Prove for subharmonic $v$ that
+\[v(x) \leq \dashint_{B(x,r)} v\,dy \quad\text{for all } B(x,r) \subset U.\]
+\part Prove that therefore $\max_{\bar{U}} v = \max_{\partial U} v$.
+\part Let $\phi : \R \rightarrow \R$ be smooth and convex. Assume $u$ is harmonic and $v = \phi(u)$. Prove $v$ is subharmonic.
+\part Prove $v = |Du|^2$ is subharmonic, whenever $u$ is harmonic.
+\end{parts}
+
+\end{questions}
+
+\end{document}
