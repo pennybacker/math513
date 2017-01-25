@@ -36,16 +36,16 @@
 
 \question In the following way, solve the problem for Poisson's equation on the ball $B(0,1) \subset \R^2$ given by
 \[\begin{cases}
-\Delta u = y & \text{in } B^0(0,1) \\
+\Delta u = x_2 & \text{in } B^0(0,1) \\
 u = 1 & \text{on } \partial B(0,1).
 \end{cases}\]
-Look for a solution in polar coordinates of the form
+Look for a solution in polar coordinates $x_1 = r\cos(\theta)$, $x_2 = r\sin(\theta)$ of the form
 \[u(r,\theta) = \frac12\,A_0(r) + \sum_{n = 1}^{\infty} \big( A_n(r)\cos(n\theta) + B_n(r)\sin(n\theta) \big),\]
 assuming that $u$ is bounded near the origin.
 
 \begin{parts}
-\part Write the function $y$ and the operator $\Delta$ in polar coordinates. Deduce the ODEs that $A_0$, $A_1$, $B_1$, \dots~satisfy along with the corresponding initial conditions.
-\part Solve these initial value problems and substitute the solutions into the ansatz for $u$. Write your answer as a function of $x$ and $y$.
+\part Write the function $x_2$ and the operator $\Delta$ in polar coordinates. Deduce the ODEs that $A_0$, $A_1$, $B_1$, \dots~satisfy along with the corresponding initial conditions.
+\part Solve these initial value problems and substitute the solutions into the ansatz for $u$. Write your answer as a function of $x_1$ and $x_2$.
 
 \emph{Hint}: You should obtain the ODE $r^2 B_1'' + r B_1' - B_1 = r^3$ when solving for $B_1$. This ODE has a particular solution of the form $B_1(r) = c\,r^3$. Use this fact to obtain the general solution to the ODE.
 \end{parts}
