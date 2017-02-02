@@ -1,0 +1,69 @@
+\documentclass[12pt,fleqn]{exam}
+
+\usepackage{amssymb,amsfonts,amsmath}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{tabularx}
+
+\newcommand{\class}{MATH 513/463}
+\newcommand{\term}{Spring 2017}
+\newcommand{\doctitle}{Homework 3}
+
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\D}{\ensuremath{\mathrm{R}}}
+
+\def\Xint#1{\mathchoice
+	{\XXint\displaystyle\textstyle{#1}}%
+	{\XXint\textstyle\scriptstyle{#1}}%
+	{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+	{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+	\vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+
+
+\parindent 0ex
+
+\pagestyle{head}
+\header{\bf \class}{\bf \doctitle\ - Page \thepage\ of \numpages}{\bf \term}
+\headrule
+
+\begin{document}
+
+\begin{questions}
+
+\question Explain why subharmonic functions have the name that they do. That is, give a brief argument why the graphs of subharmonic functions must lie below (or at worst touching) the graphs of harmonic functions with the same boundary conditions.
+
+\question Let $U$ be a bounded, open subset of $\R^n$ and suppose that $u$ is a smooth solution of
+\[\begin{cases}
+-\Delta u = f & \text{in } U \\
+u = g & \text{on } \partial U .
+\end{cases}\]
+
+\begin{parts}
+\part Show that $v(x) = u(x) + \frac{|x|^2}{2n}\lambda$ is subharmonic, where $\lambda = \max_{\bar{U}}|f|$.
+\part Show that $w(x) = - u(x) + \frac{|x|^2}{2n}\lambda$ is subharmonic.
+\end{parts}
+
+\question (Evans \S2.5, \#6) Let $U$ be a bounded, open subset of $\R^n$. Prove that there exists a constant $C$, depending only on $U$, such that
+\[\max_{\bar{U}} |u| \leq C(\max_{\partial U} |g| + \max_{\bar{U}} |f|)\]
+whenever $u$ is a smooth solution of
+\[\begin{cases}
+-\Delta u = f & \text{in } U \\
+u = g & \text{on } \partial U .
+\end{cases}\]
+
+\emph{Hint}: Use your results from the last question, along with a result about subharmonic functions from last week's homework.
+
+\question (Evans \S2.5, \#7) Use Poisson's formula for the ball to prove
+\[r^{n-2}\,\frac{r-|x|}{(r+|x|)^{n-1}}\,u(0) \leq u(x) \leq r^{n-2}\,\frac{r+|x|}{(r-|x|)^{n-1}}\,u(0)\]
+whenever $u$ is positive and harmonic in $B^0(0,r)$.
+
+\question Use Poisson's formula for the half-plane to find the harmonic function $u(x)$ in $\R^2_+$ with
+\[u(x_1,0) = \begin{cases} -1 & \text{if $x_1 < -1$} \\ x_1 & \text{if $-1 \leq x_1 \leq 1$} \\ 1 & \text{if $x_1 > 1$}.\end{cases}\]
+
+\end{questions}
+
+\end{document}
