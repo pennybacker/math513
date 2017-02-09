@@ -1,0 +1,85 @@
+\documentclass[12pt,fleqn]{exam}
+
+\usepackage{amssymb,amsfonts,amsmath}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{tabularx}
+
+\newcommand{\class}{MATH 513/463}
+\newcommand{\term}{Spring 2017}
+\newcommand{\doctitle}{Homework 4}
+
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\D}{\ensuremath{\mathrm{R}}}
+
+\def\Xint#1{\mathchoice
+	{\XXint\displaystyle\textstyle{#1}}%
+	{\XXint\textstyle\scriptstyle{#1}}%
+	{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+	{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+	\vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+
+
+\parindent 0ex
+
+\pagestyle{head}
+\header{\bf \class}{\bf \doctitle\ - Page \thepage\ of \numpages}{\bf \term}
+\headrule
+
+\begin{document}
+
+\begin{questions}
+
+\question Let $U = \{x \mid |x| > 1\}$ be the exterior of the unit ball in $\R^n$ for $n \geq 2$. Show that there are infinitely many solutions to the problem
+\[\begin{cases}
+\Delta u = 0 & \text{in } U \\
+u = 1 & \text{on } \partial U .
+\end{cases}\]
+
+\emph{Hint}: Find an infinite family of solutions! You will need to handle the cases $n = 2$ and $n \geq 3$ separately.
+
+\question Let $U \subset \R^2$ be the wedge $\{\mathbf{x} \in \mathbb{R}^2 \mid x_1 > x_2,\ x_2 > 0\}$. Find the Green's function $G(x,y)$ in terms of the fundamental solution $\Phi$.
+
+\vspace{1ex}\emph{Hint}: Start building your corrector by cancelling the boundary values of $\Phi$ on the half-line $x_1 > 0$, $x_2 = 0$. Add the required term to your corrector and check the boundary values of the resulting function on the half-line $x_1 > 0$, $x_2 = x_1$. Cancel these values. Repeat this process, alternating sections of the boundary, until you've eliminated the boundary values everywhere.
+
+\question Let $U$ be the unit interval $(0,1) \subset \R$. Recall that the Green's function on is given by
+\[G(x,y) = \frac12 \big(|y-x|-x-y\big) + xy.\]
+Use this to find an explicit solution the problem
+\[
+\begin{cases}
+-u_{xx} = 1 & \text{ in $U$} \\
+u(0) = 1 \\
+u(1) = 1.
+\end{cases}
+\]
+
+\question Again, let $U$ be the unit interval $(0,1) \subset \R$. Consider the problem
+\[
+\begin{cases}
+-u_{xx} + u = 1 & \text{ in $U$} \\
+u(0) = 1 \\
+u(1) = 1.
+\end{cases}
+\]
+
+\begin{parts}
+\part Find the Green's function $G(x,y)$.
+\part Use the Green's function to find an explicit solution.
+\end{parts}
+
+\question (Evans, \S2.5, \#12) Suppose $u$ is smooth and solves $u_t - \Delta u = 0$ in $\R^n \times (0,\infty)$.
+
+\begin{parts}
+\part Show $u_\lambda(x,t) = u(\lambda x, \lambda^2 t)$ also solves the heat equation for each $\lambda \in \R$.
+\part Use (a) to show $v(x,t) = x \cdot Du(x,t) + 2t u_t(x,t)$ solves the heat equation as well.
+
+\emph{Hint}: Differentiate $u_\lambda$ with respect to $\lambda$.
+\end{parts}
+
+\end{questions}
+
+\end{document}
