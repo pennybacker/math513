@@ -1,0 +1,71 @@
+\documentclass[12pt,fleqn,leqno]{exam}
+
+\usepackage{amssymb,amsfonts,amsmath}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{tabularx}
+
+\newcommand{\class}{MATH 513/463}
+\newcommand{\term}{Spring 2017}
+\newcommand{\doctitle}{Homework 5}
+
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\D}{\ensuremath{\mathrm{R}}}
+
+\def\Xint#1{\mathchoice
+	{\XXint\displaystyle\textstyle{#1}}%
+	{\XXint\textstyle\scriptstyle{#1}}%
+	{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+	{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+	\vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+
+
+\parindent 0ex
+
+\pagestyle{head}
+\header{\bf \class}{\bf \doctitle\ - Page \thepage\ of \numpages}{\bf \term}
+\headrule
+
+\begin{document}
+
+\begin{questions}
+
+\question (Evans \S2.5, \#12) Suppose $u$ is smooth and solves $u_t - \Delta u = 0$ in $\R^n \times (0,\infty)$.
+
+\begin{parts}
+\part Show that $u_\lambda(x,t) = u(\lambda x, \lambda^2 t)$ also solves the heat equation for each $\lambda \in \R$.
+\part Use (a) to show $v(x,t) = x \cdot Du(x,t) + 2t u_t(x,t)$ solves the heat equation as well.\\[1ex]
+\emph{Hint}: Differentiate $u_\lambda$ with respect to $\lambda$.
+\end{parts}
+
+\question (Evans \S2.5, \#13) Assume $n = 1$ and $u(x,t) = v(\frac{x}{\sqrt{t}})$.
+
+\begin{parts}
+\part Show
+\[u_t = u_{xx}\]
+if and only if
+\begin{equation}
+v'' + \frac{z}{2} v' = 0.\tag{$*$}\label{scaling}
+\end{equation}
+Show that the general solution of \eqref{scaling} is
+\[v(z) = c \int_0^z e^{-s^2/4}\,ds + d.\]
+\part Differentiate $u(x,t) = v(\frac{x}{\sqrt{t}})$ with respect to x and select the constant $c$ properly, to obtain the fundamental solution $\Phi$ for $n = 1$. Explain why this procedure produces the fundamental solution. \\[1ex]
+\emph{Hint}: What is the initial condition for $u$?
+\end{parts}
+
+\question (Evans \S2.5, \#14) Write down an explicit formula for a solution of
+\[\begin{cases}
+u_t - \Delta u + cu = f & \text{in } \R^n \times (0,\infty) \\
+u = g & \text{on } \R^n \times \{t = 0\},
+\end{cases}\]
+where $c \in \R$.\\[1ex]
+
+\emph{Hint}: Try a solution of the form $u(x,t) = v(x,t)e^{-ct}$.
+
+\end{questions}
+
+\end{document}
