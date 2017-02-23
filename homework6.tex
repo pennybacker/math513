@@ -1,0 +1,66 @@
+\documentclass[12pt,fleqn,leqno]{exam}
+
+\usepackage{amssymb,amsfonts,amsmath}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{tabularx}
+
+\newcommand{\class}{MATH 513/463}
+\newcommand{\term}{Spring 2017}
+\newcommand{\doctitle}{Homework 6}
+
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\D}{\ensuremath{\mathrm{R}}}
+
+\def\Xint#1{\mathchoice
+	{\XXint\displaystyle\textstyle{#1}}%
+	{\XXint\textstyle\scriptstyle{#1}}%
+	{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+	{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+	\vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+
+
+\parindent 0ex
+
+\pagestyle{head}
+\header{\bf \class}{\bf \doctitle\ - Page \thepage\ of \numpages}{\bf \term}
+\headrule
+
+\begin{document}
+
+\begin{questions}
+\question (Evans \S2.5, \#15) Given $g : [0,\infty) \rightarrow \R$. with $g(0) = 0$, derive the formula
+\[u(x,t) = \frac{x}{\sqrt{4\pi}} \int_0^t \frac{1}{(t-s)^{3/2}}\,e^{\frac{-x^2}{4(t-s)}}\,g(s)\,ds\]
+for a solution of the initial/boundary-value problem
+\[\begin{cases}
+u_t - u_{xx} = 0 & \text{in } \R_+ \times (0,\infty) \\
+u = 0 & \text{on } \R_+ \times \{t = 0\} \\
+u = g & \text{on } \{x = 0\} \times [0,\infty)
+\end{cases}\]
+
+\emph{Hint}: Let $v(x,t) = u(x,t) - g(t)$ and extend $v$ to $\{x < 0\}$ by odd reflection.
+
+\question (Evans \S2.5, \#16) Give a direct proof (i.e. one that does not rely on the mean-value property) that if $U$ is bounded and $u \in C_1^2(U_T) \cap C(\bar{U}_T)$ solves the heat equation, then
+\[\max_{\bar{U}_T} u = \max_{\Gamma_T} u.\]
+
+\emph{Hint}: Define $u_\varepsilon = u - \epsilon t$ for $\varepsilon > 0$, and show that $u_\varepsilon$ cannot attain its maximum over $\bar{U}_T$ at a point in $U_T$.
+
+\question (Evans \S2.5, \#17) We say $v \in C_1^2(U_T)$ is a \emph{subsolution} of the heat equation if
+\[v_t - \Delta v \leq 0\quad \text{in } U_T.\]
+
+\begin{parts}
+\part Prove for a subsolution $v$ that
+\[v(x,t) \leq \frac{1}{4r^n} \iint_{E(x,t; r)} v(y,s) \, \frac{|x-y|^2}{(t-s)^2}\,dyds\]
+for all $E(x,t; r) \subset U_T$. \emph{Note}: This was first proven in 1973!
+\part Prove that therefore $\max_{\bar{U}_T} v = \max_{\Gamma_T} v$.
+\part Let $\phi : \R \rightarrow \R$ be smooth and convex. Assume $u$ solves the heat equation and $v = \phi(u)$. Prove $v$ is a subsolution.
+\part Prove $v = |Du|^2 + u_t^2$ is a subsolution, whenever $u$ solves the heat equation.
+\end{parts}
+
+\end{questions}
+
+\end{document}
