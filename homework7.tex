@@ -1,0 +1,77 @@
+\documentclass[12pt,fleqn,leqno]{exam}
+
+\usepackage{amssymb,amsfonts,amsmath}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{enumerate}
+
+\newcommand{\class}{MATH 513/463}
+\newcommand{\term}{Spring 2017}
+\newcommand{\doctitle}{Homework 7}
+
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\D}{\ensuremath{\mathrm{R}}}
+
+\def\Xint#1{\mathchoice
+	{\XXint\displaystyle\textstyle{#1}}%
+	{\XXint\textstyle\scriptstyle{#1}}%
+	{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+	{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+	\vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+
+
+\parindent 0ex
+
+\pagestyle{head}
+\header{\bf \class}{\bf \doctitle\ - Page \thepage\ of \numpages}{\bf \term}
+\headrule
+
+\begin{document}
+
+\begin{questions}
+
+% McOwen Pg. 94, #4
+\question The partial differential equation $u_{tt} = c^2 \Delta t - q(x) u$ arises in the study of wave propagation in a nonhomogeneous elastic medium, where $q(x)$ is non-negative and represents the coefficient of elasticity at $x$.
+
+\begin{parts}
+\part Define an appropriate notion of energy for solutions, and justify your choice by showing that the energy is constant under reasonable assumptions about boundary conditions.
+\part Use the energy result to show that solutions are uniquely determined by their initial condition.
+\end{parts}
+
+% McOwen Pg. 94, #6
+\question Consider a flexible beam with clamped ends at $x = 0$ and $x = 1$. Small amplitude waves in this beam satisfy the problem
+\[\begin{cases}
+u_{tt} + \gamma^2\,u_{xxxx} = 0 & \text{in } (0,1) \times (0,\infty) \\
+u(x,t) = u_x(x,t) = 0 & \text{on } \{x = 0,1\} \times (0,\infty),
+\end{cases}\]
+where $\gamma^2$ is a constant depending on the shape of the beam and the elastic material in the beam. Show that the following energy function is conserved:
+\[e(t) = \frac12 \int_0^1 (u_t^2 + \gamma^2\,u_{xx}^2)\,dx.\]
+
+\question (Evans \S2.5, \#17) Let $u \in C^2(\R \times [0, \infty))$ solve the initial-value problem for the wave equation in one dimension:
+\[\begin{cases}
+u_{tt} - u_{xx} = 0 & \text{in } \R \times (0,\infty) \\
+u = g, u_t = h & \text{on } \R \times \{t = 0\}.
+\end{cases}\]
+Suppose $g,h$ have compact support. The \emph{kinetic energy} is $k(t) = \frac12 \int_{-\infty}^\infty u_t^2(x,t)\,dx$ and the \emph{potential energy} is $p(t) = \frac12 \int_{-\infty}^\infty u_x^2(x,t)\,dx$. Prove
+
+\begin{enumerate}[(i)]
+\item $k(t) + p(t)$ is constant in $t$,
+\item $k(t) = p(t)$ for all large enough times $t$
+\end{enumerate}
+
+\question (Evans \S2.5, \#18) Let $u$ solve
+\[\begin{cases}
+u_{tt} - \Delta u = 0 & \text{in } \R^3 \times (0,\infty) \\
+u = g, u_t = h & \text{on } \R^3 \times \{t = 0\},
+\end{cases}\]
+where $g,h$ are smooth functions and have compact support. Show there exists a constant $C$ such that
+\[|u(x,t)| \leq C/t \quad (x \in \R^3,\ t > 0).\]
+
+\end{questions}
+
+\end{document}
