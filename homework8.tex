@@ -1,0 +1,67 @@
+\documentclass[12pt,fleqn,leqno]{exam}
+
+\usepackage{amssymb,amsfonts,amsmath}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{enumerate}
+
+\newcommand{\class}{MATH 513/463}
+\newcommand{\term}{Spring 2017}
+\newcommand{\doctitle}{Homework 8}
+
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\D}{\ensuremath{\mathrm{R}}}
+
+\def\Xint#1{\mathchoice
+	{\XXint\displaystyle\textstyle{#1}}%
+	{\XXint\textstyle\scriptstyle{#1}}%
+	{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+	{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+	\vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+
+
+\parindent 0ex
+
+\pagestyle{head}
+\header{\bf \class}{\bf \doctitle\ - Page \thepage\ of \numpages}{\bf \term}
+\headrule
+
+\begin{document}
+
+\begin{questions}
+
+\question Let $U$ be the open unit square $(0,1) \times (0,1)$. Consider the problem of trying to find $u$ with
+\[
+\Delta u = 0 \text{ in $\Omega$}, \quad
+\frac{du}{dn} = h \text{ on $\partial \Omega$}
+\]
+for $h = 0$ on all sides but the bottom, where $h = h(x)$ with $\int_0^1 h(x)\,dx = 0$. Find a family of solutions to this problem using separation of variables.
+
+\question Let $U$ be the annulus with inner radius 1 and outer radius 2. Consider the problem of trying to find $u$ with
+\[
+\Delta u = 0 \text{ in $\Omega$}, \quad
+u = g \text{ on $\partial \Omega$}
+\]
+for $g = 0$ on the inner radius and $g = g(\theta)$ on the outer radius. Find a solution to this problem using separation of variables.
+
+% Based on Evans, 4.7, #1
+\question Consider the PDE
+\[u_x^2 u_{xx} + 2 u_x u_y u_{xy} + u_y^2 u_{yy} = 0 \quad \text{in $\R^2$}.\]
+
+\begin{parts}
+\part Use separation of variables with $u(x,y) = X(x) + Y(y)$ to find a nontrivial solution.
+\part Show that in the polar coordinates $r$ and $\theta$, where $x = r \cos(\theta)$ and $y = r \sin(\theta)$, the PDE becomes
+\[u_r^2 u_{rr} + \frac{2}{r^2} u_r u_\theta u_{r\theta} + \frac{1}{r^4} u_\theta^2 u_{\theta\theta} - \frac{1}{r^3} u_r u_\theta^2 = 0.\]
+\part Looking for a solution of the form $u(r,\theta) = r^k \Theta(\theta)$, show that the ODE satisfied by $\Theta$ is
+\[(\Theta')^2\Theta'' + \Theta (\Theta')^2 (2k^2-k) + k^3(k-1)\Theta^3 = 0.\]
+\part Using the ODE in the previous part, find a nontrivial solution $u(x,y)$ of the PDE for each of $k = 0, \frac12, 1$.
+\end{parts}
+
+\end{questions}
+
+\end{document}
