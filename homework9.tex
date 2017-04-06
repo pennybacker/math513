@@ -1,0 +1,55 @@
+\documentclass[12pt,fleqn,leqno]{exam}
+
+\usepackage{amssymb,amsfonts,amsmath}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{enumerate}
+
+\newcommand{\class}{MATH 513/463}
+\newcommand{\term}{Spring 2017}
+\newcommand{\doctitle}{Homework 9}
+
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\D}{\ensuremath{\mathrm{R}}}
+
+\def\Xint#1{\mathchoice
+	{\XXint\displaystyle\textstyle{#1}}%
+	{\XXint\textstyle\scriptstyle{#1}}%
+	{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+	{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+	\vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+
+
+\parindent 0ex
+
+\pagestyle{head}
+\header{\bf \class}{\bf \doctitle\ - Page \thepage\ of \numpages}{\bf \term}
+\headrule
+
+\begin{document}
+
+\begin{questions}
+
+\question Solve the following initial-value problems using the method of characteristics.
+
+\begin{parts}
+\part $u_x + u_y = u^2$, \quad $u(x, 0) = x$.
+\part $(u+y) u_x + u_y = -u$, \quad $u(x, 0) = x$.
+\end{parts}
+
+\question Solve the following Cauchy problems using the method of characteristics.
+
+\begin{parts}
+\part $x u_x - x u_y = u - 1$, \quad $u(x, x^2) = x^3 + x^2 + 1$.
+\part $u u_x + u_y = 2$, \quad $u(x, x) = x$.
+\end{parts}
+
+\question Is it possible to solve the problem \[u_x + u_y = 0, \quad u(x, x) = 2\] using characteristics? Solve it or explain why you can't.
+\end{questions}
+
+\end{document}
