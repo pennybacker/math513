@@ -1,0 +1,59 @@
+\documentclass[12pt,fleqn,leqno]{exam}
+
+\usepackage{amssymb,amsfonts,amsmath}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{enumerate}
+
+\newcommand{\class}{MATH 513/463}
+\newcommand{\term}{Spring 2017}
+\newcommand{\doctitle}{Homework 10}
+
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\D}{\ensuremath{\mathrm{R}}}
+
+\def\Xint#1{\mathchoice
+	{\XXint\displaystyle\textstyle{#1}}%
+	{\XXint\textstyle\scriptstyle{#1}}%
+	{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+	{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+	\vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+
+
+\parindent 0ex
+
+\pagestyle{head}
+\header{\bf \class}{\bf \doctitle\ - Page \thepage\ of \numpages}{\bf \term}
+\headrule
+
+\begin{document}
+
+\begin{questions}
+
+\question Solve each of the following Cauchy problems using the method of characteristics by completing the Cauchy data\footnote{Recall that the Cauchy data are compatible if $F(f,g,h,\phi,\psi) = 0$ and $h' = \phi f' + \psi g'$.} and solving the characteristic equations.
+
+\begin{parts}
+\part $u_x^2 + u_y = y$, \quad $u(x,0) = 0$
+\part $u_x^3 - u_y = 0$, \quad $u(x,0) = 2x^{3/2}$
+\part $x u_x + y u_y + \frac12 (u_x^2 + u_y^2) = u$, \quad $u(x,0) = \frac12 (1-x^2)$
+\end{parts}
+
+\question Consider the Cauchy problem for $u_x^2+u_y^2=1$ subject to the boundary condition $u = 0$ on the circle of radius 1 in the $xy$-plane.
+
+\begin{parts}
+\part You may parameterize the Cauchy data $\Gamma: (f,g,h,\phi,\psi)$ with
+\[f(s) = \cos(s),\quad g(s) = \sin(s),\quad h(s) = 0.\]
+Determine compatible functions $\phi(s)$, $\psi(s)$. You should get two sets of solutions.
+\part Find the solution $u(x,y)$ for each set of Cauchy data using the characteristic equations. Be careful to make sure your solution satisfies the boundary condition.
+\end{parts}
+
+\question Recall that \[F(x,y,z,p,q) = a(x,y,z)\,p+b(x,y,z)\,q-c(x,y,z)\] for a quasilinear first-order equation. Determine admissible functions $\phi$, $\psi$ in terms of $f$, $g$, $h$ for the Cauchy data $\Gamma: (f,g,h,\phi,\psi)$. You should be able to express each function as a quotient. What condition guarantees that the denominator remains nonzero?
+
+\end{questions}
+
+\end{document}
