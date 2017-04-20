@@ -1,0 +1,75 @@
+\documentclass[12pt,fleqn,leqno]{exam}
+
+\usepackage{amssymb,amsfonts,amsmath}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{enumerate}
+
+\newcommand{\class}{MATH 513/463}
+\newcommand{\term}{Spring 2017}
+\newcommand{\doctitle}{Homework 11}
+
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\D}{\ensuremath{\mathrm{R}}}
+
+\def\Xint#1{\mathchoice
+	{\XXint\displaystyle\textstyle{#1}}%
+	{\XXint\textstyle\scriptstyle{#1}}%
+	{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+	{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+	\vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+
+
+\parindent 0ex
+
+\pagestyle{head}
+\header{\bf \class}{\bf \doctitle\ - Page \thepage\ of \numpages}{\bf \term}
+\headrule
+
+\begin{document}
+
+\begin{questions}
+
+\question Prove the following properties of the Fourier transform in $\mathbb{R}$.
+\begin{parts}
+\part If $u$ is purely real, then $\hat{u}(-y) = \overline{\hat{u}(y)}$.
+\part If $u$ is purely real and even, then $\hat{u}$ is purely real and even.\end{parts}
+
+\question Find the Fourier transform in $\mathbb{R}$ of the function
+\[u(x) = \begin{cases}
+1-\frac{|x|}{a} & \text{if $|x| \leq a$} \\
+0 & \text{if $|x| > a$}
+\end{cases}\]
+
+\question Use the Fourier transform to find a solution of
+\[u'' + x u' + u = 0,\quad u(0) = 1,\quad u'(0) = 0.\] 
+\emph{Hint}: First show that $(x\,u'(x))\,\hat{} = -(\hat{u}(y)+y\,\hat{u}'(y))$.
+
+\question Use the Fourier transform to find an explicit formula for the solution of
+\[\begin{cases}
+u_t - u_{xx} + \alpha u = 0 & \text{in $\mathbb{R} \times (0,\infty)$} \\
+u = g & \text{on $\mathbb{R} \times \{t = 0\}$},
+\end{cases}\]
+where $g \in L^2(\mathbb{R})$ and $\alpha \in \mathbb{R}$ is a constant.
+
+\question Consider the initial value problem
+\[\begin{cases}
+u_t = a u_x + b u_{xx} + c u_{xxxx} + f & \text{in $\mathbb{R} \times (0,\infty)$} \\
+u = g & \text{on $\mathbb{R} \times \{t = 0\}$},
+\end{cases}\]
+where $a, b, c \in \mathbb{R}$ are constant and $f,g \in L^2(\mathbb{R})$.
+
+
+\begin{parts}
+\part Find all values of $a, b, c$ for which this problem is well-posed in $L^2(\mathbb{R})$. That is, $\|u(\cdot,t)\|_{L^2(\mathbb{R})} < \infty$ for all $t \geq 0$.
+\part Find an explicit formula for the solution of the problem.
+\end{parts}
+
+\end{questions}
+
+\end{document}
