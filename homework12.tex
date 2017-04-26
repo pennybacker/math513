@@ -1,0 +1,77 @@
+\documentclass[12pt,fleqn,leqno]{exam}
+
+\usepackage{amssymb,amsfonts,amsmath}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{enumerate}
+
+\newcommand{\class}{MATH 513/463}
+\newcommand{\term}{Spring 2017}
+\newcommand{\doctitle}{Homework 12}
+
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\D}{\ensuremath{\mathrm{R}}}
+
+\def\Xint#1{\mathchoice
+	{\XXint\displaystyle\textstyle{#1}}%
+	{\XXint\textstyle\scriptstyle{#1}}%
+	{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+	{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+	\vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+
+
+\parindent 0ex
+
+\pagestyle{head}
+\header{\bf \class}{\bf \doctitle\ - Page \thepage\ of \numpages}{\bf \term}
+\headrule
+
+\begin{document}
+
+\begin{questions}
+
+\question Find explicitly the entropy solution of the conservation law
+\[\begin{cases}
+u_t + ({\textstyle\frac{u^2}{2}})_x = 0 &\text{in $\mathbb{R} \times (0,\infty)$} \\
+u = g &\text{on $\mathbb{R} \times \{t = 0\}$}
+\end{cases}\]
+for
+\[g(x) = \begin{cases}
+1 &\text{if $x < -1$} \\
+0 &\text{if $-1 < x < 0$} \\
+2 &\text{if $0 < x < 1$} \\
+0 &\text{if $x > 1$} . \\
+\end{cases}\]
+Draw a few pictures documenting your answer, being sure to illustrate what happens for all times $t > 0$.
+
+\question Find explicitly the entropy solution of the conservation law
+\[\begin{cases}
+u_t + (u^2+u)_x = 0 &\text{in $\mathbb{R} \times (0,\infty)$} \\
+u = g &\text{on $\mathbb{R} \times \{t = 0\}$}
+\end{cases}\]
+for
+\[g(x) = \begin{cases}
+1 &\text{if $x < 0$} \\
+-3 &\text{if $x > 0$}
+\end{cases}\]
+
+\question Find explicitly the entropy solution of the conservation law
+\[\begin{cases}
+u_t + ({\textstyle\frac{u^3}{3}})_x = 0 &\text{in $\mathbb{R} \times (0,\infty)$} \\
+u = g &\text{on $\mathbb{R} \times \{t = 0\}$}
+\end{cases}\]
+for
+\[g(x) = \begin{cases}
+0 &\text{if $x < 0$} \\
+-2 &\text{if $x > 0$}
+\end{cases}\]
+Make sure that your solution satisfies the entropy condition. \emph{Hint}: The solution should involve a rarefaction wave of the form $v(\frac{x}{t})$.
+
+\end{questions}
+
+\end{document}
